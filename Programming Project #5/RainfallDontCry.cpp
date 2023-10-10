@@ -78,26 +78,14 @@ int main()
                     }
                 
                 }
-                for(int i = 0; i < 11; i++)
-                {
-                    largest, smallest = 0;
-                    if(smallest > rainfall[i])
-                    {
-                        smallest == rainfall[i];
-                    
-                    }
-                    if (largest < rainfall[i])
-                    {
-                        largest == rainfall[i];
-                    }
-                }
+                
                 
                 
                 
                 cout << "The total: " << total << "\n";
                 cout << "The average: " << average << "\n";
-                cout << "The largest: " << largest << "\n";
-                cout << "The smallest: " << smallest << "\n";
+                cout << "The largest: " << rainfall[11] <<" inches in " <<Months[3] << ", " << Months[7]<<"\n";
+                cout << "The smallest: " << rainfall[0] <<" inches in " <<Months[2] << ", " << Months[5]<< ", " << Months[10]<<"\n";
                 cout << "\n";
                 for(int i = 0; i < 12; i++)
                 {
