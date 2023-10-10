@@ -5,14 +5,36 @@
 
 
 using namespace std;
+double rainfall[12];
+int counter = 0;
+string monthIndex;
+
+
+string index(double val)
+{
+    for(int i = 0; i < 12; i++){
+        if(rainfall[i] == val )
+        {
+            monthIndex += i;
+        }
+    
+
+    }
+    return monthIndex;
+    monthIndex = "";
+    
+}
 
 int main()
 {
     string input;
-    double rainfall[12];
+    string Months[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+
     double total;
     double average;
     double temp;    
+    double largest;
+    double smallest;
     string a;
     do{
 
@@ -44,7 +66,7 @@ int main()
                 average = total / 12;
                 for(int i = 0; i < 12; i++)
                 {
-                    for(int j = 1; j < 12; j++)
+                    for(int j = i+1; j < 12; j++)
                     {
                         if(rainfall[j] < rainfall[i])
                         {
@@ -52,21 +74,45 @@ int main()
                             rainfall[j] = rainfall[i];
                             rainfall[i] = temp;
                         }
-                        else if(rainfall[i] == rainfall[j])
-                        {
-                            
-
-                        }
+                        
                     }
                 
                 }
+                for(int i = 0; i < 11; i++)
+                {
+                    largest, smallest = 0;
+                    if(smallest > rainfall[i])
+                    {
+                        smallest == rainfall[i];
+                    
+                    }
+                    if (largest < rainfall[i])
+                    {
+                        largest == rainfall[i];
+                    }
+                }
+                
+                
+                
                 cout << "The total: " << total << "\n";
                 cout << "The average: " << average << "\n";
-                cout << "The largest: " << rainfall[10] << "\n";
-                cout << "The smallest: " << rainfall[0] << "\n";
+                cout << "The largest: " << largest << "\n";
+                cout << "The smallest: " << smallest << "\n";
+                cout << "\n";
                 for(int i = 0; i < 12; i++)
                 {
-                    cout << rainfall[i] << "\n";
+                    if(rainfall[i] == rainfall[0])
+                    {
+                         cout << Months[i] << "      " << rainfall[i] << " (smallest)" << "\n";
+                    }
+                    else if(rainfall[i] == rainfall[11])
+                    {
+                         cout << Months[i] << "      " << rainfall[i] << " (largest)" << "\n";
+                    }
+                    else{
+                    cout << Months[i] << "      " << rainfall[i] << "\n";
+
+                    }
                     
                 }
 
