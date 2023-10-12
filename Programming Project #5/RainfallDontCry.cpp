@@ -30,7 +30,7 @@ int main()
     string input;
     string Months[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
 
-    double total;
+    double total = 0;
     double average;
     double temp;    
     double largest;
@@ -123,6 +123,8 @@ int main()
     
 
     }while(input != "n" && input != "-1");
+
+    cout << "Programmed by Seojin Park";
 
 
 }
