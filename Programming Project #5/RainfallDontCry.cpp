@@ -31,10 +31,13 @@ int main()
     string Months[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
 
     double total = 0;
-    double average;
-    double temp;    
-    double largest;
-    double smallest;
+    double average = 0;
+    double temp = 0;    
+    string largest = "";
+    string smallest = "";
+    double original[12];
+    
+    
     string a;
     do{
 
@@ -60,6 +63,7 @@ int main()
                 {
                     getline(myfile,a);
                     rainfall[i] = stod(a);
+                    original[i] = stod(a);
                     total += rainfall[i];
 
                 }
@@ -84,25 +88,40 @@ int main()
                 
                 cout << "The total: " << total << "\n";
                 cout << "The average: " << average << "\n";
-                cout << "The largest: " << rainfall[11] <<" inches in " <<Months[3] << ", " << Months[7]<<"\n";
-                cout << "The smallest: " << rainfall[0] <<" inches in " <<Months[2] << ", " << Months[5]<< ", " << Months[10]<<"\n";
+
+                for(int i = 0; i < 12; i++)
+                {
+                    if(original[i] == rainfall[0])
+                    {
+                        smallest += Months[i] + ", ";
+                    }
+                    if(original[i] == rainfall[11])
+                    {
+                        largest += Months[i] + ", ";
+                    }
+                }
+                cout << "The largest: " << rainfall[11] <<" inches in " << largest;
+                cout << "\n";
+                cout << "The smallest: " << rainfall[0] <<" inches in " << smallest;
                 cout << "\n";
                 for(int i = 0; i < 12; i++)
                 {
-                    if(rainfall[i] == rainfall[0])
+                    if(original[i] == rainfall[0])
                     {
-                         cout << Months[i] << "      " << rainfall[i] << " (smallest)" << "\n";
+                         cout << Months[i] << "      " << original[i] << " (smallest)" << "\n";
                     }
-                    else if(rainfall[i] == rainfall[11])
+                    else if(original[i] == rainfall[11])
                     {
-                         cout << Months[i] << "      " << rainfall[i] << " (largest)" << "\n";
+                         cout << Months[i] << "      " << original[i] << " (largest)" << "\n";
                     }
                     else{
-                    cout << Months[i] << "      " << rainfall[i] << "\n";
+                    cout << Months[i] << "      " << original[i] << "\n";
 
                     }
                     
                 }
+                largest = "";
+                smallest = "";
 
                 
 
