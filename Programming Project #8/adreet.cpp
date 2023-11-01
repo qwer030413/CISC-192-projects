@@ -22,4 +22,5 @@ void simplify(int num, int den, int which)
 }
 int main(){
 
+cout << "chris"+ "park";
 }
