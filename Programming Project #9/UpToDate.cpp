@@ -40,7 +40,7 @@ int main(){
     string dateInput;
     dates dateobject;
     string dayYear;
-    string month [12] = ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    string month [12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     do{
             cout << "The program displays a valid date in three different formats. \n";
             cout <<"Note: All junk data will be rejected! \n";
@@ -87,7 +87,7 @@ int main(){
                             {
                                 cout <<"Date: " << dateInput << " is Invalid \n";
                             }
-                            if(dateobject.day > 30){
+                            else if(dateobject.day > 30){
                                 cout <<"Date: " << dateInput << " is Invalid \n";
 
                             }
@@ -112,7 +112,7 @@ int main(){
                     {
                         cout <<"Date: " << dateInput << " is Invalid \n";
                     }
-                     if(dateobject.day < 32 && dateobject.month < 13)
+                    else if(dateobject.day < 32 && dateobject.month < 13)
                     {
                         if(dateobject.month == 1 ||dateobject.month == 3 ||dateobject.month == 5 ||dateobject.month == 7 ||dateobject.month == 8 ||dateobject.month == 10 ||dateobject.month == 12 ){
                             if(dateobject.day > 31){
@@ -155,4 +155,5 @@ int main(){
       
 
     }while(dateInput != "n");
+    cout << "Programmer: Seojin Park for CISC 192";
 }
