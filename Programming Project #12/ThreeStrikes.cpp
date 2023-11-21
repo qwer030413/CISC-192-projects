@@ -155,5 +155,5 @@ int main(){
 
     }while(input == 'p');
     
-
+cout << "Programmed by chris park for cisc 192";
 }
