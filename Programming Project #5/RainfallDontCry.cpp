@@ -1,10 +1,13 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
+#include <iomanip>
 
 
 
 using namespace std;
+using std::left;
+
 double rainfall[12];
 int counter = 0;
 string monthIndex;
@@ -108,14 +111,14 @@ int main()
                 {
                     if(original[i] == rainfall[0])
                     {
-                         cout << Months[i] << "      " << original[i] << " (smallest)" << "\n";
+                         cout << setw(14)  <<Months[i] << setw(14) << original[i] << setw(14)  <<" (smallest)" << "\n";
                     }
                     else if(original[i] == rainfall[11])
                     {
-                         cout << Months[i] << "      " << original[i] << " (largest)" << "\n";
+                         cout << setw(14)  <<Months[i] <<  setw(14)  << original[i] << setw(14)  <<" (largest)" << "\n";
                     }
                     else{
-                    cout << Months[i] << "      " << original[i] << "\n";
+                    cout <<setw(14)  <<Months[i] <<  setw(14)  << original[i] << "\n";
 
                     }
                     
