@@ -347,7 +347,7 @@ int main(){
         
 
     }while(input != -1);
-
+    cout << "Programmed by chris park for cisc 192";
     }
 
 
