@@ -110,12 +110,13 @@ int main(){
     char choice;
     double money;
     int c = 0;
+    int s = 0;
 
     cout << "Welcome to Chris Parks Enterprise Bank!! \n";
     cout << "\n";
     cout << "please register: \n";
     cout << "full name: ";
-    cin >> name;
+    getline(cin, name);
     cout << "title: ";
     cin >> title;
     cout << "SSN: ";
@@ -185,13 +186,13 @@ int main(){
                             cout << "Savings balance: " << save.displayBalance() << "\n";
                         }
                         else{
-                            cout << "error";
+                            cout << "error, Invalid order or not enough money. \n";
                         }
 
                     }
                     else if(choice == 'd')
                     {
-                        cout << "balance: " << check.displayBalance();
+                        cout << "balance: " << check.displayBalance() << "\n";
 
                     }
                     else if(choice == 'e')
@@ -209,13 +210,13 @@ int main(){
                             }
                             c++;
                             cout << "done \n";
-                            cout << "you written " << c << " checks";
+                            cout << "you written " << c << " checks \n";
                             cout << "Checking balance: " << check.displayBalance() << "\n";
                         }
                         else{
                             if(c == 0)
                             {
-                                check.withdraw(money);
+                                check.withdraw(money -5);
                             }
                             else{
                                 check.withdraw(money + 0.1);
@@ -272,7 +273,7 @@ int main(){
                         {
                             cout << "withdrwaw amount: ";
                             cin >> money;
-                            save.withdraw(money);
+                            
                             if(save.displayBalance() < 25)
                             {
                                 cout<< "balance less than 25, withdrawls are not allowed \n";
@@ -280,8 +281,10 @@ int main(){
                             }
                             else{
                                 cout << "withdrawl done to savings \n";
+                                save.withdraw(money);
                                 cout << "savings balance: " << save.displayBalance() << "\n";
                             }
+                            
                             
                         }
                         else if(choice == 'c')
@@ -290,27 +293,35 @@ int main(){
                             cout << "1) from checkings to savings \n";
                             cout << "2) from savings to checkings \n";
                             cin >> input;
-                            if(input == 1)
+                            if(input == 2)
                             {
+                                
                                 cout << "Enter amount to transfer: ";
                                 cin >> money;
-                                check.withdraw(money- 1);
-                                save.deposit(money - 1);
+                                if(s == 0)
+                                {   
+                                    save.withdraw(money);
+                                }
+                                else{
+                                    save.withdraw(money+ 1);
+                                }
+                                s++;
+                                check.deposit(money + 4);
                                 cout << "Transfer successful \n";
                                 cout << "Checking balance: " << check.displayBalance() << "\n";
                                 cout << "Savings balance: " << save.displayBalance() << "\n";
                             }
                             else{
-                                cout << "error";
+                                cout << "error, Invalid order or not enough money. \n";
                             }
                         }
                         else if(choice == 'd')
                         {
-                            cout << "balance: " << save.displayBalance();
+                            cout << "balance: " << save.displayBalance() << "\n";
                         }
                         else if(choice == 'e')
                         {
-
+                            cout << "You are not allowed to write checks in savings \n";
                         }
                         else if(choice == 'f')
                         {
