@@ -38,4 +38,5 @@ int main(){
 
 
     }while(input != 0);
+    cout << "Programmed by Chris Park for CICS 192";
 }
