@@ -68,10 +68,10 @@ int main(){
             result1 = val1.top/val1.bottom;
         result2 = val2.top/val2.bottom;
         cout<<"Results of Arithmetic operations: \n";
-            cout<<frac1 <<" + " << frac2 << " = " << round((result1 + result2)*100.0) / 100.0 << "\n";
-            cout<<frac1 <<" - " << frac2 << " = " << round((result1 - result2)*100.0) / 100.0 << "\n";
-            cout<<frac1 <<" * " << frac2 << " = " << round((result1 * result2)*100.0) / 100.0 << "\n";
-            cout<<frac1 <<" / " << frac2 << " = " << round((result1 / result2)*100.0) / 100.0 << "\n";
+            cout<<frac1 <<" + " << frac2 << " = " << val1.top * val2.bottom + val2.top * val1.bottom << "/" << val1.bottom * val2.bottom << " = "<<round((result1 + result2)*100.0) / 100.0 << "\n";
+            cout<<frac1 <<" - " << frac2 << " = " << val1.top * val2.bottom - val2.top * val1.bottom << "/" << val1.bottom * val2.bottom << " = "<<round((result1 - result2)*100.0) / 100.0 << "\n";
+            cout<<frac1 <<" * " << frac2 << " = " << val1.top * val2.top << "/" << val1.bottom * val2.bottom << " = "<<round((result1 * result2)*100.0) / 100.0 << "\n";
+            cout<<frac1 <<" / " << frac2 << " = " << val1.top * val2.bottom  << "/" << val1.bottom * val2.top << " = "<<round((result1 / result2)*100.0) / 100.0 << "\n";
         }
         
 
