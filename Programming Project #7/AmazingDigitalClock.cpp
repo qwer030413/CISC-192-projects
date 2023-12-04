@@ -17,11 +17,21 @@ int findColumn(string word)
     }
     return index;
 }
+int getLucky(int n)
+    {
+        int sum = 0;
+        while (n != 0) {
+            sum = sum + n % 10;
+            n = n / 10;
+        }
+        return sum;
+    }
 int main(){
     char yn;
     string input;
     char arr[5];
     int meaning;
+    bool lucky = false;
     int hours;
     int min;
     
@@ -31,6 +41,13 @@ int main(){
         cin >> input;
         hours = stoi(input.substr(0,findColumn(input)));
         min = stoi(input.substr(findColumn(input) + 1));
+        if(getLucky(hours) == getLucky(min))
+        {
+            lucky = true;
+        }
+        else{
+            lucky = false;
+        }
         if(hours > 12)
         {
             meaning  = 5;
@@ -83,31 +100,60 @@ int main(){
 
        
 
-
-        if(meaning == 1)
+        if(lucky)
         {
-            cout << input << " is a normal time.    -> BINGO! Go to buy a lottery ticket.";
+            if(meaning == 1)
+            {
+                cout << input << " is a Lucky time.    -> BINGO! Go to buy a lottery ticket.";
 
-        }
-        if(meaning == 2)
-        {
-            cout << input << " is a normal time.    --> UP! All dreams will come true.";
+            }
+            if(meaning == 2)
+            {
+                cout << input << " is a Lucky time.    --> UP! All dreams will come true.";
 
-        }
-        if(meaning == 3)
-        {
-            cout << input << " is a normal time.    -> DOWN! The challenging road is ahead.";
+            }
+            if(meaning == 3)
+            {
+                cout << input << " is a Lucky time.    -> DOWN! The challenging road is ahead.";
 
-        }
-        if(meaning == 4)
-        {
-            cout << input << " is a normal time.";
+            }
+            if(meaning == 4)
+            {
+                cout << input << " is a Lucky time.";
 
+            }
+            if(meaning == 5)
+            {
+                cout<< "that is not a real time try again";
+            }
+        }   
+        else{
+            if(meaning == 1)
+            {
+                cout << input << " is a normal time.    -> BINGO! Go to buy a lottery ticket.";
+
+            }
+            if(meaning == 2)
+            {
+                cout << input << " is a normal time.    --> UP! All dreams will come true.";
+
+            }
+            if(meaning == 3)
+            {
+                cout << input << " is a normal time.    -> DOWN! The challenging road is ahead.";
+
+            }
+            if(meaning == 4)
+            {
+                cout << input << " is a normal time.";
+
+            }
+            if(meaning == 5)
+            {
+                cout<< "that is not a real time try again";
+            }
         }
-        if(meaning == 5)
-        {
-            cout<< "that is not a real time try again";
-        }
+       
 
 
 
