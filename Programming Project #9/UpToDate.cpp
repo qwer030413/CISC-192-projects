@@ -61,7 +61,7 @@ int main(){
 
                 }
                 else{
-                    if(dateobject.year % 4 == 0)
+                    if(dateobject.year % 4 == 0 && dateobject.year % 100 != 0)
                 {
                     cout << dateobject.year << " -> Leap Year! \n";
                     if(dateobject.day < 32 && dateobject.month < 13)

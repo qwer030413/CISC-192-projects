@@ -75,7 +75,17 @@
     "valarray": "cpp",
     "variant": "cpp",
     "ranges": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "any": "cpp",
+    "barrier": "cpp",
+    "charconv": "cpp",
+    "coroutine": "cpp",
+    "optional": "cpp",
+    "source_location": "cpp",
+    "latch": "cpp",
+    "semaphore": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
