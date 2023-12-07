@@ -17,6 +17,7 @@ class game{
         int strikes = 0;
         int digits = 0;
         
+        
         void setIndex(){
             do{
                 srand ( time(NULL) );
@@ -28,10 +29,23 @@ class game{
             return index;
         }
         void reset(){
-            for(int i = 0; i < 5; i ++){
-            price[i] = to_string(rand()%10)[0];
-            dup[i] = price[i];
-            }
+            int random[10] = {0};
+            int dg = 0;
+            srand ( time(NULL) );
+
+            
+            do{
+                int num = rand() %  10;
+                
+                if(random[num] != 1)
+                {
+                    price[dg] = to_string(num)[0];
+                    dup[dg] = price[dg];
+                    dg++;
+                }
+                
+                random[num] = 1;
+            }while(dg < 5);
             price += "aaa";
             strikes = 0;
             digits = 0;

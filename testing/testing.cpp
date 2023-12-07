@@ -11,18 +11,7 @@
 using namespace std;
 
 int main(){
-    int zipcode = 1;
-    int meow;
-    switch(1)
-    {
-        case 1:
-            meow = 1;
-        case 2:
-            meow = 1 + 2;
-
-        default:
-            meow = 4;
-    }
-
-    cout << meow;
+    string aditi = "aditi";
+    cout << aditi.substr(0,1) << "\n";
+    cout << aditi[0];
 }
