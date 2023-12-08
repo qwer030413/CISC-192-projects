@@ -12,10 +12,8 @@
 using namespace std;
 
 int main(){
-    set<int> ln;
-    while( ln->size() < 5 ){
-		ln->insert( rand()%50+1 );
-		cout << "working";
-	}
-    cout << "working";
+    double a = 40;
+    double& b = a;
+    b = 10;
+    cout << a;
 }
